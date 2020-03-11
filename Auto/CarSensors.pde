@@ -9,7 +9,6 @@ void onLightEvent(float v){
 }
 
 void onProximityEvent(float v) {
-  println("proximity: " + v);
   proximity = v;
   testSensorEvent();
  }
@@ -54,7 +53,7 @@ void eventInTheCar(int event){
       alerta[2] = "";
   }
   if(currentEvent != event && event >= 0 & event <=4){
-    println("BEEP");
+    honk.play();
   }
   currentEvent = event;
 }

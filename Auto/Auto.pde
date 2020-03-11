@@ -8,6 +8,8 @@ import ketai.net.*;
 
 import ketai.sensors.*;
 
+import cassette.audiofiles.SoundFile;
+
 KetaiSensor sensor;
 PVector accelerometer;
 float light, proximity;
@@ -25,6 +27,8 @@ boolean isWatching = false;
 String[] alerta = {"", "", ""};
 int currentEvent = -1;
 
+SoundFile honk;
+
 void setup() {
   orientation(PORTRAIT);
   stroke(255);
@@ -36,6 +40,7 @@ void setup() {
   location = new KetaiLocation(this);
 
   textFont(createFont("FontsFree-Net-Proxima-Nova-Bold.otf", 64));
+  honk = new SoundFile(this, "honk.mp3");
 }
 
 void draw() {
