@@ -54,6 +54,14 @@ void eventInTheCar(int event){
   }
   if(currentEvent != event && event >= 0 & event <=4){
     honk.play();
+    if(event == Eventos.PROXIMITY_EVENT){
+      PImage temp = cam;
+      int aux;
+      temp.loadPixels();
+      aux = temp.width;
+      aux = temp.height;
+      intruderPhoto = temp.get();
+    }
   }
   currentEvent = event;
 }
