@@ -1,4 +1,4 @@
-
+import P5ireBase.library.*;
 import android.os.Bundle;
 import android.content.Intent;
 
@@ -32,9 +32,13 @@ SoundFile honk;
 KetaiCamera cam;
 PImage intruderPhoto = null;
 
+P5ireBase fire;
+
 void setup() {
   orientation(PORTRAIT);
   stroke(255);
+  
+  fire = new P5ireBase(this, "https://debapla-3166a.firebaseio.com/");
     
   sensor = new KetaiSensor(this);
   sensor.start();
